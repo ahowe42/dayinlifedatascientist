@@ -15,5 +15,5 @@ This repository includes the files needed to create a docker container which can
 
 ## Docker Build
 From the repository folder, execute `docker compose up` to build the docker app. Then the jupyter notebook can be accessed on *localhost:9999*, and tensorboard (for the neural network) on *localhost:6006*. Otherwise, you can execute from the repository folder:
-1. docker image build -t dayinlifedatascientist .
-2. docker container run -d -p 9999:8888 -p 6006:6006 -v //path_to_folder/dayinlifedatascientist/notebooks:/usr/src/notebooks dayinlifedatascientist
+1. `docker image build -t dayinlifedatascientist .`
+2. `docker container run -d -p 9999:8888 -p 6006:6006 -v //path_to_folder/dayinlifedatascientist/notebooks:/usr/src/notebooks dayinlifedatascientist`
