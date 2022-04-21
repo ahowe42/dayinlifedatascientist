@@ -1,0 +1,14 @@
+# docker container run -d -p 9999:8888 -p 6006:6006 -v //c/users/howean/Documents/DayinLifeDataScientist/notebooks:/usr/src/notebooks dayinlifedatascientist:ubuntu
+version: '2'
+
+services:
+  python:
+    image: dayinlifedatascientist:ubuntu
+    #build:
+    #  context: .
+    #  dockerfile: Dockerfile_ubuntu
+    ports:
+      - 9999:8888
+      - 6006:6006
+    volumes:
+        - ./notebooks:/usr/src/notebooks

@@ -1,0 +1,17 @@
+FROM ubuntu:latest
+
+WORKDIR /usr/src/
+
+COPY ./requirements.txt ./
+
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends python3.8 pip supervisor \
+    && rm -rf /var/lib/apt/lists/* \
+    && pip install --no-cache-dir -r requirements.txt
+    
+COPY ./supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+ 
+EXPOSE 8888
+EXPOSE 6006
+
+CMD ["/usr/bin/supervisord"]
